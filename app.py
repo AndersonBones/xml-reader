@@ -16,7 +16,6 @@ class Gui():
         self.app.resizable(height=False, width=False)
 
         self.bg = '#004B93'
-        self.xml_reader = XML_Reader
 
         self.title = CTkLabel(
             self.app, 
@@ -142,11 +141,14 @@ class Gui():
     def run_xml_reader(self):
         # self.move_progress()
 
-        self.xml_reader(self.directory_path).run()
+        self.xml_reader = XML_Reader(self.directory_path)
+        self.xml_reader.run()
+
         self.saveFile()
+
         self.success_popup()
 
-        print(self.xml_reader.progress)
+        
         
         
 

@@ -281,7 +281,7 @@ class XML_Reader():
                 )
         
 
-                self.progress+=1
+            
 
             except Exception as error:
             
@@ -294,12 +294,12 @@ class XML_Reader():
     def to_data_frame(self):
         self.newNfe = pad_dict_list(self.NFe)
         self.df_nfe = pd.DataFrame.from_dict(self.newNfe)
-        self.progress+=1
+      
     
     def export_file(self, output_path):
+        
         self.df_nfe.to_excel(output_path, index=False, sheet_name='Notas Fiscais')
-        self.progress+=1
-
+       
     def run(self):
 
         self.setValues()
